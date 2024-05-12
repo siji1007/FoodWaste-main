@@ -9,12 +9,17 @@ const Home: React.FC = () => {
       const scrollPosition = window.scrollY;
 
       if (contentBackup) {
-        if (scrollPosition > 50) {
-          setIsFloating(true);
-        } else {
-          setIsFloating(false);
-        }
+        setIsFloating(scrollPosition > 50);
       }
+
+      const slideElements = document.querySelectorAll('.slide');
+      slideElements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + scrollPosition;
+        if (elementTop < window.innerHeight * 0.75) {
+          element.classList.add('animate-slide');
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -54,14 +59,11 @@ const Home: React.FC = () => {
         </section>
       </div>
 
-
-      
       <div className='Card-contents' >
-        <h1 style={{top:''}}>USERS</h1>
-        <div className='float-Cards' style={{ opacity: isFloating ? 1 : 0, transition: 'opacity 0.5s ease' , display: 'flex', justifyContent: 'space-between' }}>
+       <div className='float-Cards' style={{ opacity: isFloating ? 1 : 0, transition: 'opacity 0.5s ease' , display: 'flex', justifyContent: 'space-between' }}>
  
           <div className='card'>
-           <img src='src\assets\cards-images\Customers.png' alt='Customer image' style={{ width: '100%' }} />
+           <img src='src\assets\cards-images\Customers.png' alt='Customer image' style={{ width: '100%', height:'60%'}} />
           
             <h3>CUSTOMER</h3>
             <p>This is the customer description</p>
@@ -69,7 +71,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className='card'>
-            <img src='src\assets\cards-images\Customers.png' alt='Customer image' style={{ width: '100%' }} />
+            <img src='src\assets\cards-images\Vendors.jpg' alt='Customer image' style={{ width: '100%', height:'60%' }} />
           
             <h3>VENDOR</h3>
             <p>This is the customer description</p>
@@ -77,7 +79,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className='card'>
-            <img src='src\assets\cards-images\Customers.png' alt='Customer image' style={{ width: '100%' }} />
+            <img src='src\assets\cards-images\organization.jpg' alt='Customer image' style={{ width: '100%', height:'60%' }} />
         
             <h3>ORGANIZATION</h3>
             <p>This is the customer description</p>
@@ -93,29 +95,29 @@ const Home: React.FC = () => {
 
 
 
-        <h1>NEWS</h1>
+        <h1 className='news-title'>RELATED <span>ARTICLES</span></h1>
         <section className='news'>
-        <div className='slider-container'>
-          <div className='slide'>
-          <video src='src/assets/Advertisement.mp4' loop muted></video>
+          <div className='slider-container'>
+            <div className='slide'>
+            <video src='src/assets/Advertisement.mp4' autoPlay loop muted></video>
+              <p>News 1</p>
+            </div>
+            <div className='slide'>
+            <video src='src/assets/Advertisement.mp4' autoPlay loop muted></video>
+              <p>News 2</p>
+            </div>
+            <div className='slide'>
+            <video src='src/assets/Advertisement.mp4' autoPlay loop muted></video>
+              <p>News 3</p>
+            </div>
+            <div className='slide'>
+            <video src='src/assets/Advertisement.mp4' autoPlay loop muted></video>
+              <p>News 4</p>
+            </div>
           </div>
-          <div className='slide'>
-          <video src='src/assets/Advertisement.mp4' loop muted></video>
-          </div>
-          <div className='slide'>
-          <video src='src/assets/Advertisement.mp4' loop muted></video>
-          </div>
-          <div className='slide'>
-          <video src='src/assets/Advertisement.mp4' loop muted></video>
-          </div>
-        </div>
-      </section>
+        </section>
+
       </div>
-
-      
-
-
-
     </header>
   );
 }

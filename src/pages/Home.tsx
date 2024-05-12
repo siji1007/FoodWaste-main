@@ -4,6 +4,16 @@ const Home: React.FC = () => {
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
+    const animateImagesLoop = () => {
+      const slideElements = document.querySelectorAll('.content-backup section img');
+      slideElements.forEach((element, index) => {
+        const animationDelay = index * 1000; // Delay each animation by 1 second
+        (element as HTMLElement).style.animation = `moveUp 2s ease-in-out ${animationDelay}ms infinite`;
+      });
+    };
+
+    animateImagesLoop();
+
     const handleScroll = () => {
       const contentBackup = document.querySelector('.content-backup');
       const scrollPosition = window.scrollY;
@@ -11,15 +21,6 @@ const Home: React.FC = () => {
       if (contentBackup) {
         setIsFloating(scrollPosition > 50);
       }
-
-      const slideElements = document.querySelectorAll('.slide');
-      slideElements.forEach((element) => {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + scrollPosition;
-        if (elementTop < window.innerHeight * 0.75) {
-          element.classList.add('animate-slide');
-        }
-      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,6 +30,12 @@ const Home: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleImageClick = (altText: string) => {
+    // Handle click for specific image based on alt text
+    alert(altText);
+  };
+
 
   return (
     <header className={`home ${isFloating ? 'floating' : ''}`} id="home">
@@ -41,19 +48,19 @@ const Home: React.FC = () => {
 
       <div className={`content-backup ${isFloating ? 'floating' : ''}`}>
         <section>
-          <img src="src\assets\lockIcon.png" alt='Lock'></img>
+          <img src="src\assets\lockIcon.png" alt='Lock' onClick={() => handleImageClick('Create Account')}></img>
           <h1>Create Account</h1>
           <p>First you have to create a account  here</p>
         </section>
 
         <section>
-          <img src="src\assets\MapIcon.png" alt='Lock'></img>
+          <img src="src\assets\MapIcon.png" alt='Lock' onClick={() => handleImageClick('Location Access')}></img>
           <h1>Location Access</h1>
           <p>Allow GPS for tracking</p>
         </section>
 
         <section>
-          <img src="src\assets\OTP.png" alt='Lock'></img>
+          <img src="src\assets\OTP.png" alt='Lock' onClick={() => handleImageClick('OTP')}></img>
           <h1>OTP</h1>
           <p>For Legitimacy</p>
         </section>

@@ -13,9 +13,6 @@ function Navbar() {
         <li className="link"><a href="/Home">Home</a></li>
         <li className="link"><a href="/About">About us</a></li>
         <li className="link"><a href="/Contact">Contact</a></li>
-        <li className="link"><a href="/Signin">Signin</a></li>
-
-
       </ul>
 
    

@@ -4,7 +4,7 @@ import Footer from './Components/footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Signin from './pages/Signin';
+
 
 
 function App() {
@@ -26,9 +26,6 @@ function App() {
       component = <Contact/>
       break;
 
-    case '/Signin':
-      component = <Signin/>
-      break;
 
 
   }

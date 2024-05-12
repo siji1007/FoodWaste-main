@@ -1,0 +1,200 @@
+.home {
+  position: relative; /* Ensure the header is the positioning context */
+}
+
+.Title-Vid, .Description-header {
+  position: absolute; /* Position both elements absolutely */
+  left: 20px; /* Adjust left positioning as needed */
+  color: #177569; /* Change color of the elements */
+}
+
+.Title-Vid {
+  font-size:3vw;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  top: 5%; 
+  z-index: 2; 
+}
+
+.Title-Vid span{
+  background-color: #177569;
+  color: white; 
+  border-bottom-right-radius: 20px;
+  padding-right: 10px;
+}
+
+.Description-header {
+  position: absolute; 
+  font-size:1.2vw;
+  top: 10%; 
+  left: 20px; 
+  width: 35%;  
+  color: white; 
+  z-index: 1; 
+  box-shadow: 0 2px 4px rgba(23, 117, 105, 0.2); 
+}
+
+.Description-header .highlight {
+  background-color: #177569;
+  display: inline-block;
+}
+
+
+.content-backup {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.6rem 1rem;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row; /* Arrange sections horizontally */
+  gap: 20px;
+  height: 15%;
+  border-bottom: 5px solid #177569;
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+  opacity: 1; /* Initial opacity */
+  pointer-events: auto; /* Allow pointer events */
+ 
+}
+
+.content-backup.fade-out {
+  opacity: 0; /* Fade out the section */
+  pointer-events: none; /* Disable pointer events */
+}
+
+.content-backup {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition properties */
+}
+
+.content-backup.floating {
+  transform: translate(-50%, calc(-50% - 300px)); /* Move up by 50px */
+  opacity: 0; /* Make the section transparent */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition properties */
+}
+
+
+.content-backup section {
+  width: 200px;
+  display: flex;
+  flex-direction: column; /* Elements inside sections are stacked vertically */
+  align-items: center; /* Center content horizontally */
+
+}
+
+.content-backup section img {
+  margin-bottom: 10px; /* Add margin to the bottom of the image for spacing */
+}
+
+
+
+.content-backup section h1 {
+  color: white;
+  font-size: 2vw;
+}
+
+.content-backup section p {
+  font-size: 1rem;
+  color: black;
+  text-align: center;
+  font-size: 1.3vw;
+}
+
+.content-backup section img {
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.content-backup section img:hover {
+  transform: translateY(-20px); /* Move the image up slightly on hover */
+}
+
+
+
+
+
+.card {
+  flex: 1;
+  max-width: 300px; /* Adjust the maximum width of each card */
+  padding: 20px;
+  margin-top: -220px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(0.1, 0.1, 0.1, 0.1)); /* Define gradient background */
+}
+
+.Card-contents {
+  display: flex; /* Use Flexbox */
+  background-image: url("src/assets/backgroundBelow.png");
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  height: 1000px;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: center; /* Horizontally center all elements */
+  align-items: center;
+  flex-direction: column;
+}
+
+.Card-contents p {
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+
+.float-Cards {
+  display: flex;
+  gap: 20px;
+
+}
+
+
+.Card-contents .float-Cards.visible {
+  opacity: 100%;
+}
+
+
+
+
+.Card-contents .float-Cards.hidden {
+  opacity: 0;
+}
+
+.Card-contents .description-users p {
+  background-color: red;
+  color: white;
+}
+
+
+.news {
+  width: 100%;
+  height: 150px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slide {
+  flex: 0 0 calc(25% - 10px);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers the container */
+  border-radius: 25px; /* Add border-radius */
+}
+
+

@@ -2,6 +2,38 @@
   position: relative; /* Ensure the header is the positioning context */
 }
 
+#book-me {
+  position: fixed;
+  bottom: 20px; /* Adjust this value to control the distance from the bottom */
+  right: 20px; /* Adjust this value to control the distance from the right */
+  transform: none;
+  transform-origin: 100% 0;
+  z-index: 99999;
+}
+#book-me a {
+  background: #177569;
+  color: #fff;
+  border-color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  padding: 10px; /* Adjust this value to fit the icon */
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the icon */
+  width: 50px; /* Set a fixed width */
+  height: 50px; /* Set a fixed height */
+}
+#book-me a span {
+  display: none; /* Hide the text */
+}
+#book-me svg {
+  margin: 0; /* Remove margin since there's no text */
+}
+
+
 .Title-Vid, .Description-header {
   position: absolute; /* Position both elements absolutely */
   left: 20px; /* Adjust left positioning as needed */

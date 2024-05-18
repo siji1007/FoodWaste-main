@@ -42,6 +42,18 @@ const Home: React.FC = () => {
       <video autoPlay loop muted style={{ width: '100%', height: '320px', objectFit: 'fill' }}>
         <source src="src/assets/Advertisement.mp4" type="video/mp4"/>
       </video>
+
+
+
+        {/* This is the floating icon for chatbot */}
+        <div id="book-me">
+  <a href="/contact">
+    <svg className="chatbot-message-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 4H20V16H5.17L4 17.17V4ZM3 2C2.44772 2 2 2.44772 2 3V20.25L5.25 17H20C21.1046 17 22 16.1046 22 15V3C22 1.89543 21.1046 1 20 1H4C3.44772 1 3 1.44772 3 2Z" fill="currentColor"/>
+    </svg>
+  </a>
+</div>
+
       
       <h1 className='Title-Vid'>Camarines Norte <span>FoodWaste</span></h1>
       <p className='Description-header'>At ReduceWaste.com, we believe in the power of collective action to tackle one of the most pressing issues of our time: food waste. Every year, billions of tons of food are wasted globally, contributing to environmental degradation, economic losses, and exacerbating issues of hunger and food insecurity.</p>

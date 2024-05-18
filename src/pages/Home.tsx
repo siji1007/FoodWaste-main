@@ -100,8 +100,6 @@ const Home: React.FC = () => {
           <p>The website continues to function and evolve because users have distinct roles, embodying characters that play integral roles in its operation and ongoing development.</p>
         </div>
 
-
-
         <h1 className='news-title'>RELATED <span>ARTICLES</span></h1>
         <section className='news'>
           <div className='slider-container'>

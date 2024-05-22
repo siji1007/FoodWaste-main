@@ -7,7 +7,6 @@
 
 body {
   margin: 0;
-  font-family: "Sarala", sans-serif;
 }
 
 .Title-proj {
@@ -25,7 +24,7 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  height: 7vh;
+  height: 3rem;
   padding: 0 1rem;
   font-size: 1.7rem;
   position: fixed;
@@ -38,66 +37,21 @@ html {
   padding: 0;
   margin: 0;
   list-style: none;
-  font-family: "Sarala", sans-serif;
   display: flex;
   gap: 1rem;
 }
 
-.nav a:hover {
-  transition: 0.2s ease;
-  background-color: #102925;
-  border-radius: 1vw;
-  padding: .5vh;
-}
-
 .nav a {
-  transition: 0.2s ease;
   color: inherit;
   text-decoration: none;
 }
 
 .nav-bar .content {
   display: flex;
-  
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
-
-footer {
-  display: flex;
-  align-items: center;
-  margin-top: auto;
-  width: 100%;
-  background-color: #ffffff;
-  padding: .5vh;
-  z-index: 1;
-}
-
-.footer-img-container {
-  display: flex;
-  align-items: center;
-}
-
-footer p {
-  color: rgb(65, 153, 144);
-  font-family: cursive;
-  font-size: 2vh;
-  padding-right: 6vh;
-  font-weight: bold;
-  text-align: center; /* Center text within the paragraph */
-  flex: 1; /* Take up remaining space to center the text */
-}
-
-footer img {
-  padding-left: 2vh;
-  height: 7.5vh;
-}
-
-
-
-
-
 
 /* Media query for mobile view */
 @media (max-width: 768px) {

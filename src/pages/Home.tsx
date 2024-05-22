@@ -19,7 +19,7 @@ const Home: React.FC = () => {
       const scrollPosition = window.scrollY;
 
       if (contentBackup) {
-        setIsFloating(scrollPosition > 150);
+        setIsFloating(scrollPosition > 50);
       }
     };
 
@@ -38,8 +38,8 @@ const Home: React.FC = () => {
 
 
   return (
-    <body className={`home ${isFloating ? 'floating' : ''}`} id="home">
-      <video autoPlay loop muted style={{ width: '100%', height: '50vh', objectFit: 'fill' }}>
+    <header className={`home ${isFloating ? 'floating' : ''}`} id="home">
+      <video autoPlay loop muted style={{ width: '100%', height: '320px', objectFit: 'fill' }}>
         <source src="src/assets/Advertisement.mp4" type="video/mp4"/>
       </video>
 
@@ -112,7 +112,7 @@ const Home: React.FC = () => {
           <p>The website continues to function and evolve because users have distinct roles, embodying characters that play integral roles in its operation and ongoing development.</p>
         </div>
 
-        <h1 className='news-title'>RELATED ARTICLES</h1>
+        <h1 className='news-title'>RELATED <span>ARTICLES</span></h1>
         <section className='news'>
           <div className='slider-container'>
             <div className='slide'>
@@ -133,8 +133,9 @@ const Home: React.FC = () => {
             </div>
           </div>
         </section>
+
       </div>
-    </body>
+    </header>
   );
 }
 

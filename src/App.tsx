@@ -25,7 +25,9 @@ function App() {
     case '/Contact':
       component = <Contact/>
       break;
-      
+
+
+
   }
 
   return (

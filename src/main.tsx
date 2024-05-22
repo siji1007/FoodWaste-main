@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App.tsx';
 import './index.css';
 import './Design/Home.css';
+import './Design/About.css'
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
